@@ -1,0 +1,160 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "price": 10.99,
+      "genre": "Fiction",
+      "stock": 12,
+      "img": "book.png",
+      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
+    },
+    {
+      "id": "2",
+      "title": "1984",
+      "author": "George Orwell",
+      "price": 8.99,
+      "genre": "Fiction",
+      "stock": 8,
+      "img": "book2.png",
+      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
+    },
+    {
+      "id": "3",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "price": 12.49,
+      "genre": "Fiction",
+      "stock": 5,
+      "img": "book3.png",
+      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
+    },
+    {
+      "id": "4",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "price": 9.99,
+      "genre": "Romance",
+      "stock": 7,
+      "img": "book4.png",
+      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
+    },
+    {
+      "id": "5",
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "price": 10.49,
+      "genre": "Romance",
+      "stock": 6,
+      "img": "book5.png",
+      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
+    },
+    {
+      "id": "6",
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "price": 11.99,
+      "genre": "Romance",
+      "stock": 4,
+      "img": "book6.png",
+      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsamt."
+    },
+    {
+      "id": "7",
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "price": 12.99,
+      "genre": "Romance",
+      "stock": 10,
+      "img": "book3.png",
+      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
+    },
+    {
+      "id": "8",
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "price": 9.49,
+      "genre": "Romance",
+      "stock": 5,
+      "img": "book5.png",
+      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
+    },
+    {
+      "id": "9",
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "price": 10.99,
+      "genre": "Dystopian",
+      "stock": 3,
+      "img": "book.png",
+      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsamy."
+    },
+    {
+      "id": "10",
+      "title": "The Picture of Dorian Gray",
+      "author": "Oscar Wilde",
+      "price": 8.99,
+      "genre": "Historical",
+      "stock": 6,
+      "img": "book2.png",
+      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
+    },
+    {
+      "id": "11",
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "price": 14.99,
+      "genre": "Historical",
+      "stock": 2,
+      "img": "book5.png",
+      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
+    },
+    {
+      "id": "12",
+      "title": "The Brothers Karamazov",
+      "author": "Fyodor Dostoevsky",
+      "price": 13.49,
+      "genre": "Philosophical",
+      "stock": 4,
+      "img": "book4.png",
+      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "123",
+      "password": "123",
+      "role": "user"
+    },
+    {
+      "id": 1,
+      "name": "Jane Smith",
+      "password": "hashed_password2",
+      "role": "admin"
+    },
+    {
+      "id": 1732010219879,
+      "name": "1233",
+      "password": "1233",
+      "role": "user"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "bookId": 1,
+      "userId": 1,
+      "rating": 5,
+      "comment": "A masterpiece of American literature."
+    },
+    {
+      "id": "2",
+      "bookId": 2,
+      "userId": 2,
+      "rating": 4,
+      "comment": "A thought-provoking classic."
+    }
+  ]
+}
