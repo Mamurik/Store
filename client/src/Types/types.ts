@@ -5,7 +5,6 @@ export interface IBook {
     author: string;
     price: number;
     genre: string;
-    stock: number;
     img:string,
     desc:string 
   }
@@ -15,7 +14,7 @@ export interface IBook {
     name: string;
     password: string; 
     role: 'user' | 'admin';
-    cart?:[]
+    cart?:IBook[]
   }
   
   export interface IReview {

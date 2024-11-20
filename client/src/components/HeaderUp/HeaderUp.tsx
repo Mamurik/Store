@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const HeaderUp = () => {
   const isAuth = useSelector((state: RootState) => state.user.isAuth);
-  const user = useSelector((state: RootState) => state.user.users);
+  const user = useSelector((state: RootState) => state.user.user);
   console.log(user);
 
   const dispatch = useDispatch();
@@ -20,8 +20,11 @@ const HeaderUp = () => {
           <h1 className="text-black text-2xl mr-[20px] font-bold">MYBOOK</h1>
         </Link>
         <h1 className="text-black mr-[20px]">|</h1>
-        <Link href={"/Cart"}>
+        <Link href={"/Cart"} className="relative">
           <img src="cart.png" alt="Cart" />
+          <p className="absolute top-4 left-5 text-xs text-blue-600 font-bold border rounded-full bg-gray-300 pl-2 pr-2 pt-1 pb-1">
+            {user?.cart?.length}
+          </p>
         </Link>
         {isAuth && (
           <div className="text-black ml-2 text-lg flex align-center justify-center">

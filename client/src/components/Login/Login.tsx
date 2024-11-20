@@ -32,7 +32,7 @@ const Login: FC<LoginProps> = ({ onSwitchToRegister }) => {
     });
 
     if (!isAuthenticated) {
-      console.log("Не правильно ввели пароль или логин");
+      alert("Не правильно ввели пароль или логин");
     }
   };
 

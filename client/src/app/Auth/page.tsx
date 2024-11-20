@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 const Page = () => {
   const isAuth = useSelector((state: RootState) => state.user.isAuth);
   const dispatch = useDispatch();
-  const [isRegistering, setIsRegistering] = useState(false); // Состояние для переключения между формами
+  const [isRegistering, setIsRegistering] = useState(false);
 
   const handleSwitchToRegister = () => {
     setIsRegistering(true);

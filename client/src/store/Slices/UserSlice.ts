@@ -3,11 +3,11 @@ import { IUser } from "@/Types/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface IUserSlice{
-    users:IUser | null,
+    user:IUser | null,
     isAuth: boolean
 }
 const initialState:IUserSlice = {
-    users:null,
+    user:null,
     isAuth:false
 }
 
@@ -16,7 +16,7 @@ const userSlice = createSlice({
     initialState,
     reducers:{
           setUser:(state,action:PayloadAction<IUser>)=>{
-             state.users = action.payload
+             state.user = action.payload
           },
           setIsAuth:(state,action:PayloadAction<boolean>)=>{
             state.isAuth = action.payload
