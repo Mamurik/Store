@@ -2,11 +2,14 @@
 import { useGetUserByNameQuery, useGetUsersQuery } from "@/Api/UserApi";
 import { setIsAuth, setUser } from "@/store/Slices/UserSlice";
 import { RootState } from "@/store/store";
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 
-const Login = () => {
+interface LoginProps {
+  onSwitchToRegister: () => void;
+}
+const Login: FC<LoginProps> = ({ onSwitchToRegister }) => {
   const { data: users } = useGetUsersQuery();
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -34,32 +37,41 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-gray-200 ">
-      <h1 className="text-xl text-black">Login</h1>
+    <div className="bg-gray-300 min-h-screen flex items-center justify-center">
       {!isAuth && (
-        <div className="max-w-[200px] flex align-center justify-center flex-col">
+        <div className="bg-white shadow-lg rounded-lg p-8 max-w-sm w-full">
+          <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">
+            Вход
+          </h1>
           <input
+            className="w-full p-4 border border-gray-300 text-black rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={name}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setName(e.target.value)
             }
             type="text"
-            placeholder="Username"
+            placeholder="Имя пользователя"
           />
           <input
-            className="text-xl text-black width-[400px]"
+            className="w-full p-4 border border-gray-300 text-black rounded mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={password}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setPassword(e.target.value)
             }
             type="password"
-            placeholder="Password"
+            placeholder="Пароль"
           />
           <button
-            className="text-xl text-black border border-black-[3px]"
+            className="w-full py-3 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition duration-200"
             onClick={handleLogin}
           >
-            LogIn
+            Войти
+          </button>
+          <button
+            className="w-full py-3 mt-4 bg-gray-200 text-black font-bold rounded hover:bg-gray-300 transition duration-200"
+            onClick={onSwitchToRegister}
+          >
+            Нет аккаунта? Зарегестритуйтесь
           </button>
         </div>
       )}

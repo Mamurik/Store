@@ -9,7 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 const Page = () => {
   const isAuth = useSelector((state: RootState) => state.user.isAuth);
   const dispatch = useDispatch();
-  const [isRegistering, setIsRegistering] = useState(false);
+  const [isRegistering, setIsRegistering] = useState(false); // Состояние для переключения между формами
+
   const handleSwitchToRegister = () => {
     setIsRegistering(true);
   };
@@ -21,23 +22,11 @@ const Page = () => {
   return (
     <div>
       {!isAuth ? (
-        <>
-          {isRegistering ? <Register /> : <Login />}
-          <div className="mt-4">
-            {isRegistering ? (
-              <button onClick={handleSwitchToLogin} className="text-blue-500">
-                Есть аккаунт? Войдите
-              </button>
-            ) : (
-              <button
-                onClick={handleSwitchToRegister}
-                className="text-blue-500"
-              >
-                У вас нет аккаунта? Зарегистрируйтесь
-              </button>
-            )}
-          </div>
-        </>
+        isRegistering ? (
+          <Register onSwitchToLogin={handleSwitchToLogin} />
+        ) : (
+          <Login onSwitchToRegister={handleSwitchToRegister} />
+        )
       ) : (
         <div>
           <h1 className="text-xl text-white">

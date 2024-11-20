@@ -23,11 +23,14 @@ const HeaderUp = () => {
         <Link href={"/Cart"}>
           <img src="cart.png" alt="Cart" />
         </Link>
+        {isAuth && (
+          <div className="text-black ml-2 text-lg flex align-center justify-center">
+            <img className="w-8 ml-5" src="user.png" alt="" />
+            <p className="ml-2">{user?.name}</p>
+          </div>
+        )}
       </div>
       <div>
-        <Link className="text-white mr-[20px] text-lg" href={"/books"}>
-          Books
-        </Link>
         <Link className="text-white mr-[20px] text-lg" href={"/users"}>
           Users
         </Link>

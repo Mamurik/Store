@@ -4,12 +4,17 @@ import { IUser } from "@/Types/types";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-const Register = () => {
+interface RegisterProps {
+  onSwitchToLogin: () => void;
+}
+
+const Register: React.FC<RegisterProps> = ({ onSwitchToLogin }) => {
   const [username, setUserName] = useState<string>("");
   const [userPassword, setUserPassword] = useState<string>("");
   const [addUser] = useAddNewUserMutation();
   const { data: users } = useGetUsersQuery();
   const router = useRouter();
+
   const handleAddUser = async () => {
     try {
       const newUser: IUser = {
@@ -40,31 +45,42 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <div>
-        {users?.map((user) => {
-          return <div className="text-black">{user.name}</div>;
-        })}
-      </div>
-      <div className="flex justify-center align-center p-10 m-10 max-w-[500px]">
+    <div className="bg-gray-300 min-h-screen flex items-center justify-center">
+      <div className="bg-white shadow-lg rounded-lg p-8 max-w-sm w-full">
+        <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">
+          Регистрация
+        </h1>
         <input
-          className="p-5 text-black"
+          className="w-full p-4 border border-gray-300 text-black rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={username}
           type="text"
+          placeholder="Имя пользователя"
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setUserName(e.target.value);
           }}
         />
         <input
-          className="p-5 text-black"
+          className="w-full p-4 border border-gray-300 text-black rounded mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={userPassword}
           type="password"
+          placeholder="Пароль"
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setUserPassword(e.target.value);
           }}
         />
+        <button
+          className="w-full py-3 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition duration-200"
+          onClick={handleAddUser}
+        >
+          Зарегистрироваться
+        </button>
+        <button
+          className="w-full py-3 mt-4 bg-gray-200 text-black font-bold rounded hover:bg-gray-300 transition duration-200"
+          onClick={onSwitchToLogin}
+        >
+          Уже есть аккаунт? Войдите
+        </button>
       </div>
-      <button onClick={handleAddUser}>Register</button>
     </div>
   );
 };
