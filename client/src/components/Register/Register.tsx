@@ -1,6 +1,7 @@
 "use client";
 import { useAddNewUserMutation, useGetUsersQuery } from "@/Api/UserApi";
 import { IUser } from "@/Types/types";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const Register = () => {
@@ -8,6 +9,7 @@ const Register = () => {
   const [userPassword, setUserPassword] = useState<string>("");
   const [addUser] = useAddNewUserMutation();
   const { data: users } = useGetUsersQuery();
+  const router = useRouter();
   const handleAddUser = async () => {
     try {
       const newUser: IUser = {
@@ -15,12 +17,14 @@ const Register = () => {
         name: username,
         password: userPassword,
         role: "user",
+        cart: [],
       };
 
       if (username !== "" && userPassword !== "") {
         const userExists = users?.some((user) => user.name === newUser.name);
         if (!userExists) {
           const result = await addUser(newUser).unwrap();
+          router.push("/");
         } else {
           alert("Такой пользователь уже есть");
         }
@@ -34,6 +38,7 @@ const Register = () => {
       console.log(error);
     }
   };
+
   return (
     <div>
       <div>

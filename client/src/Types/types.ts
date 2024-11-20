@@ -15,6 +15,7 @@ export interface IBook {
     name: string;
     password: string; 
     role: 'user' | 'admin';
+    cart?:[]
   }
   
   export interface IReview {

@@ -17,9 +17,15 @@ const userApi = createApi({
                 url:"/users",
                 body
             })
+        }),
+        getUserByName:builder.query<IUser,string>({
+          query:(name)=>({
+            method:"GET",
+            url:`/users?name=${name}`
+          })
         })
     })
 })
 
-export const {useGetUsersQuery,useAddNewUserMutation} = userApi
+export const {useGetUsersQuery,useAddNewUserMutation,useGetUserByNameQuery} = userApi
 export default userApi

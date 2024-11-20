@@ -123,22 +123,45 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "123",
       "password": "123",
-      "role": "user"
+      "role": "user",
+      "cart": {}
     },
     {
-      "id": 1,
+      "id": "2",
       "name": "Jane Smith",
       "password": "hashed_password2",
-      "role": "admin"
+      "role": "admin",
+      "cart": {}
     },
     {
-      "id": 1732010219879,
+      "id": "1732010219879",
       "name": "1233",
       "password": "1233",
+      "role": "user",
+      "cart": []
+    },
+    {
+      "id": 1732109746328,
+      "name": "12",
+      "password": "12",
       "role": "user"
+    },
+    {
+      "id": 1732109965237,
+      "name": "1234",
+      "password": "124",
+      "role": "user",
+      "cart": []
+    },
+    {
+      "id": 1732111036859,
+      "name": "писькин",
+      "password": "писька",
+      "role": "user",
+      "cart": []
     }
   ],
   "reviews": [

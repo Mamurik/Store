@@ -4,13 +4,15 @@ import BookApi from '@/Api/BookApi';
 import { configureStore } from '@reduxjs/toolkit';
 import SearchSlice from './Slices/SearchSlice';
 import userApi from '@/Api/UserApi';
+import UserSlice from './Slices/UserSlice';
 
 export const makeStore = () => {
     return configureStore({
         reducer: {
            [BookApi.reducerPath]:BookApi.reducer,
            [userApi.reducerPath]:userApi.reducer,
-            search:SearchSlice
+            search:SearchSlice,
+            user:UserSlice
         },
         middleware: (getDefaultMiddleware) => {
             return getDefaultMiddleware().concat(BookApi.middleware).concat(userApi.middleware)
