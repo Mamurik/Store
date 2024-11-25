@@ -21,6 +21,10 @@ const BookList: FC<BookListProps> = () => {
     (state: RootState) => state.search.searchString
   );
 
+  const selectedGenre = useSelector(
+    (state: RootState) => state.genres.selectedGenre
+  );
+
   useEffect(() => {
     const cachedBooks = localStorage.getItem("books");
     if (cachedBooks) {
@@ -37,13 +41,17 @@ const BookList: FC<BookListProps> = () => {
   if (isBooksError) return <div>Error finding books</div>;
   if (isBooksLoading && books.length === 0) return <Loader />;
 
-  const filteredBooks = books?.filter((book) =>
-    book.title.toLowerCase().includes(searchString.toLowerCase())
-  );
+  const filteredBooks = books.filter((book) => {
+    const matchesSearch = book.title
+      .toLowerCase()
+      .includes(searchString.toLowerCase());
+    const matchesGenre = selectedGenre ? book.genre === selectedGenre : true;
+    return matchesSearch && matchesGenre;
+  });
 
   return (
-    <div className="grid grid-cols-2 bg-white mt-[90px] w-[1400px] border border-black-500 rounded-xl">
-      {filteredBooks && filteredBooks.length > 0 ? (
+    <div className="grid grid-cols-2 bg-white mt-[90px] w-[1400px] border border-black-500 rounded-xl mb-5">
+      {filteredBooks.length > 0 ? (
         filteredBooks.map((book) => <BookItem book={book} key={book.id} />)
       ) : (
         <div className="flex justify-center align-center mt-20">

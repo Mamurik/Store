@@ -31,16 +31,22 @@ const userApi = createApi({
                 url: `/users/${user.id}`, 
                 body: user
             })
+        }),
+        removeToCart:builder.mutation<IUser,IUser>({
+            query: (user) => ({
+                method: "PUT",
+                url: `/users/${user.id}`, 
+                body: user
+            })
         })
     })
 });
-
-// Экспортируем хуки
 export const {
     useGetUsersQuery,
     useAddNewUserMutation,
     useGetUserByNameQuery,
-    useAddToCartMutation
+    useAddToCartMutation,
+    useRemoveToCartMutation
 } = userApi;
 
 export default userApi;

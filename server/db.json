@@ -115,146 +115,7 @@
       "name": "123",
       "password": "123",
       "role": "user",
-      "cart": [
-        {
-          "id": "1",
-          "title": "The Great Gatsby",
-          "author": "F. Scott Fitzgerald",
-          "price": 10.99,
-          "genre": "Fiction",
-          "stock": 12,
-          "img": "book.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        },
-        {
-          "id": "1",
-          "title": "The Great Gatsby",
-          "author": "F. Scott Fitzgerald",
-          "price": 10.99,
-          "genre": "Fiction",
-          "stock": 12,
-          "img": "book.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        },
-        {
-          "id": "1",
-          "title": "The Great Gatsby",
-          "author": "F. Scott Fitzgerald",
-          "price": 10.99,
-          "genre": "Fiction",
-          "stock": 12,
-          "img": "book.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        },
-        {
-          "id": "3",
-          "title": "To Kill a Mockingbird",
-          "author": "Harper Lee",
-          "price": 12.49,
-          "genre": "Fiction",
-          "img": "book3.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        },
-        {
-          "id": "3",
-          "title": "To Kill a Mockingbird",
-          "author": "Harper Lee",
-          "price": 12.49,
-          "genre": "Fiction",
-          "img": "book3.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        },
-        {
-          "id": "1",
-          "title": "The Great Gatsby",
-          "author": "F. Scott Fitzgerald",
-          "price": 10.99,
-          "genre": "Fiction",
-          "img": "book.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        },
-        {
-          "id": "1",
-          "title": "The Great Gatsby",
-          "author": "F. Scott Fitzgerald",
-          "price": 10.99,
-          "genre": "Fiction",
-          "img": "book.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        },
-        {
-          "id": "2",
-          "title": "1984",
-          "author": "George Orwell",
-          "price": 8.99,
-          "genre": "Fiction",
-          "img": "book2.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        },
-        {
-          "id": "2",
-          "title": "1984",
-          "author": "George Orwell",
-          "price": 8.99,
-          "genre": "Fiction",
-          "img": "book2.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        },
-        {
-          "id": "2",
-          "title": "1984",
-          "author": "George Orwell",
-          "price": 8.99,
-          "genre": "Fiction",
-          "img": "book2.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        },
-        {
-          "id": "2",
-          "title": "1984",
-          "author": "George Orwell",
-          "price": 8.99,
-          "genre": "Fiction",
-          "img": "book2.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        },
-        {
-          "id": "2",
-          "title": "1984",
-          "author": "George Orwell",
-          "price": 8.99,
-          "genre": "Fiction",
-          "img": "book2.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        },
-        {
-          "id": "2",
-          "title": "1984",
-          "author": "George Orwell",
-          "price": 8.99,
-          "genre": "Fiction",
-          "img": "book2.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        },
-        {
-          "id": "2",
-          "title": "1984",
-          "author": "George Orwell",
-          "price": 8.99,
-          "genre": "Fiction",
-          "img": "book2.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        },
-        {
-          "id": "2",
-          "title": "1984",
-          "author": "George Orwell",
-          "price": 8.99,
-          "genre": "Fiction",
-          "img": "book2.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-        }
-      ]
+      "cart": []
     },
     {
       "id": "2",
@@ -271,20 +132,20 @@
       "cart": []
     },
     {
-      "id": 1732109746328,
+      "id": "1732109746328",
       "name": "12",
       "password": "12",
       "role": "user"
     },
     {
-      "id": 1732109965237,
+      "id": "1732109965237",
       "name": "1234",
       "password": "124",
       "role": "user",
       "cart": []
     },
     {
-      "id": 1732111036859,
+      "id": "1732111036859",
       "name": "писькин",
       "password": "писька",
       "role": "user",

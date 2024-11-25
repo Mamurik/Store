@@ -5,6 +5,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import SearchSlice from './Slices/SearchSlice';
 import userApi from '@/Api/UserApi';
 import UserSlice from './Slices/UserSlice';
+import GenresSlice from './Slices/GenresSlice';
 
 export const makeStore = () => {
     return configureStore({
@@ -12,7 +13,8 @@ export const makeStore = () => {
            [BookApi.reducerPath]:BookApi.reducer,
            [userApi.reducerPath]:userApi.reducer,
             search:SearchSlice,
-            user:UserSlice
+            user:UserSlice,
+            genres:GenresSlice
         },
         middleware: (getDefaultMiddleware) => {
             return getDefaultMiddleware().concat(BookApi.middleware).concat(userApi.middleware)
