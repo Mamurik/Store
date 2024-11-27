@@ -1,91 +1,10 @@
 {
   "books": [
     {
-      "id": "1",
-      "title": "The Great Gatsby",
-      "author": "F. Scott Fitzgerald",
-      "price": 10.99,
-      "genre": "Fiction",
-      "img": "book.png",
-      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-    },
-    {
-      "id": "2",
-      "title": "1984",
-      "author": "George Orwell",
-      "price": 8.99,
-      "genre": "Fiction",
-      "img": "book2.png",
-      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-    },
-    {
-      "id": "3",
-      "title": "To Kill a Mockingbird",
-      "author": "Harper Lee",
-      "price": 12.49,
-      "genre": "Fiction",
-      "img": "book3.png",
-      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam"
-    },
-    {
-      "id": "4",
-      "title": "Pride and Prejudice",
-      "author": "Jane Austen",
-      "price": 9.99,
-      "genre": "Romance",
-      "img": "book4.png",
-      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
-    },
-    {
-      "id": "5",
-      "title": "The Catcher in the Rye",
-      "author": "J.D. Salinger",
-      "price": 10.49,
-      "genre": "Romance",
-      "img": "book5.png",
-      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
-    },
-    {
-      "id": "6",
-      "title": "Moby Dick",
-      "author": "Herman Melville",
-      "price": 11.99,
-      "genre": "Romance",
-      "img": "book6.png",
-      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsamt."
-    },
-    {
-      "id": "7",
-      "title": "The Hobbit",
-      "author": "J.R.R. Tolkien",
-      "price": 12.99,
-      "genre": "Romance",
-      "img": "book3.png",
-      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
-    },
-    {
-      "id": "8",
-      "title": "Fahrenheit 451",
-      "author": "Ray Bradbury",
-      "price": 9.49,
-      "genre": "Romance",
-      "img": "book5.png",
-      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
-    },
-    {
-      "id": "9",
-      "title": "Brave New World",
-      "author": "Aldous Huxley",
-      "price": 10.99,
-      "genre": "Dystopian",
-      "img": "book.png",
-      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsamy."
-    },
-    {
       "id": "10",
       "title": "The Picture of Dorian Gray",
       "author": "Oscar Wilde",
-      "price": 8.99,
+      "price": 14.77,
       "genre": "Historical",
       "img": "book2.png",
       "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
@@ -98,29 +17,20 @@
       "genre": "Historical",
       "img": "book5.png",
       "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
-    },
-    {
-      "id": "12",
-      "title": "The Brothers Karamazov",
-      "author": "Fyodor Dostoevsky",
-      "price": 13.49,
-      "genre": "Philosophical",
-      "img": "book4.png",
-      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
     }
   ],
   "users": [
     {
       "id": "1",
-      "name": "123",
+      "name": "123555",
       "password": "123",
       "role": "user",
       "cart": []
     },
     {
       "id": "2",
-      "name": "Jane Smith",
-      "password": "hashed_password2",
+      "name": "123",
+      "password": "123",
       "role": "admin",
       "cart": []
     },

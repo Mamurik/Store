@@ -58,7 +58,7 @@ const UserCart = () => {
           {isCartEmpty ? "Корзина пуста" : `На сумму ${totalPrice} $`}
         </h1>
         {isCartEmpty && (
-          <img src="cartIsEmpty.png " alt="" className="w-[208px] " />
+          <img src="cartIsEmpty.png " alt="" className="w-[200px] " />
         )}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1200px] mx-auto p-5">
           {isCartEmpty ? (

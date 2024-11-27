@@ -32,8 +32,15 @@ const BookApi = createApi({
                 url: `/books/${id}`,
             }),
         }),
+        updateBook: builder.mutation<IBook, IBook>({
+            query: (book) => ({
+                method: "PUT",
+                url: `/books/${book.id}`,
+                body:book
+            }),
+        }),
     }),
 });
 
-export const { useGetBooksQuery, useGetBookByTitleQuery } = BookApi;
+export const { useGetBooksQuery, useGetBookByTitleQuery,useRemoveBookMutation,useUpdateBookMutation } = BookApi;
 export default BookApi;
