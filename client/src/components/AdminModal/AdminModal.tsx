@@ -33,7 +33,7 @@ const AdminModal: FC<AdminModalProps> = ({ book, onClose, onSave }) => {
       <div className="bg-white p-5 rounded-lg shadow-lg w-1/3">
         <h2 className="text-xl text-black mb-4">Edit Book</h2>
         <div className="mb-4">
-          <label className="block text-blue-500 mb-1">Title</label>
+          <label className="block text-blue-500 mb-1">Title:</label>
           <input
             type="text"
             value={title}
