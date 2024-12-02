@@ -42,5 +42,5 @@ const BookApi = createApi({
     }),
 });
 
-export const { useGetBooksQuery, useGetBookByTitleQuery,useRemoveBookMutation,useUpdateBookMutation } = BookApi;
+export const { useGetBooksQuery, useGetBookByTitleQuery,useRemoveBookMutation,useUpdateBookMutation,useAddNewBookMutation } = BookApi;
 export default BookApi;

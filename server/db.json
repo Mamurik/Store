@@ -4,9 +4,9 @@
       "id": "10",
       "title": "The Picture of Dorian Gray",
       "author": "Oscar Wilde",
-      "price": 14.77,
+      "price": 16.77,
       "genre": "Historical",
-      "img": "book2.png",
+      "img": "book.png",
       "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
     },
     {
@@ -15,8 +15,53 @@
       "author": "Leo Tolstoy",
       "price": 14.99,
       "genre": "Historical",
-      "img": "book5.png",
+      "img": "book2.png",
       "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
+    },
+    {
+      "id": "12",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "price": 12.99,
+      "genre": "Classic",
+      "img": "book3.png",
+      "desc": "A romantic novel that critiques the British landed gentry at the end of the 18th century."
+    },
+    {
+      "id": "13",
+      "title": "1984",
+      "author": "George Orwell",
+      "price": 15.99,
+      "genre": "Dystopian",
+      "img": "book4.png",
+      "desc": "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism."
+    },
+    {
+      "id": "14",
+      "title": "Moby Dick",
+      "author": "Herman Melville33",
+      "price": 18.5,
+      "genre": "Adventure",
+      "img": "book5.png",
+      "desc": "The narrative of Captain Ahab's obsessive quest to seek revenge on Moby Dick, a giant white sperm whale."
+    },
+    {
+      "id": "15",
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "price": 13.5,
+      "genre": "Dystopian",
+      "img": "book6.png",
+      "desc": "A novel set in a futuristic World State, where people are genetically bred and conditioned for their roles."
+    },
+    {
+      "id": "16",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "price": 10.99,
+      "genre": "Classic",
+      "img": "book3.png",
+      "desc": "A story about the Jazz Age in the United States, focusing on the enigmatic Jay Gatsby."
     }
   ],
   "users": [

@@ -7,27 +7,30 @@ import {
 import React, { FC, useEffect, useState } from "react";
 import Loader from "../UI/Loader/Loader";
 import BookItem from "../BookItem/BookItem";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { IBook } from "@/Types/types";
 import AdminModal from "../AdminModal/AdminModal";
+import { setBooks } from "@/store/Slices/BooksSlice";
 
 interface BookListProps {}
 
 const BookList: FC<BookListProps> = () => {
-  const [books, setBooks] = useState<IBook[]>([]);
+  const dispatch = useDispatch();
+  const books = useSelector((state: RootState) => state.books.books) || [];
   const {
     data: apiBooks,
     isLoading: isBooksLoading,
     isError: isBooksError,
   } = useGetBooksQuery();
+
   const searchString = useSelector(
     (state: RootState) => state.search.searchString
   );
-
   const selectedGenre = useSelector(
     (state: RootState) => state.genres.selectedGenre
   );
+
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [selectedBook, setSelectedBook] = useState<IBook | null>(null);
   const [removeBook] = useRemoveBookMutation();
@@ -36,18 +39,18 @@ const BookList: FC<BookListProps> = () => {
   useEffect(() => {
     const cachedBooks = localStorage.getItem("books");
     if (cachedBooks) {
-      setBooks(JSON.parse(cachedBooks));
+      dispatch(setBooks(JSON.parse(cachedBooks)));
     }
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (apiBooks) {
-      setBooks(apiBooks);
+      dispatch(setBooks(apiBooks));
     }
-  }, [apiBooks]);
+  }, [apiBooks, dispatch]);
 
   if (isBooksError) return <div>Error finding books</div>;
-  if (isBooksLoading && books.length === 0) return <Loader />;
+  if (isBooksLoading) return <Loader />;
 
   const filteredBooks = books.filter((book) => {
     const matchesSearch = book.title
@@ -60,7 +63,7 @@ const BookList: FC<BookListProps> = () => {
   const handleDelete = async (bookId: number) => {
     try {
       await removeBook(bookId).unwrap();
-      setBooks((prevBooks) => prevBooks.filter((book) => book.id !== bookId));
+      dispatch(setBooks(books.filter((book) => book.id !== bookId)));
     } catch (error) {
       console.error("Failed to delete the book: ", error);
     }
@@ -70,14 +73,18 @@ const BookList: FC<BookListProps> = () => {
     setSelectedBook(book);
     setOpenModal(true);
   };
+
   const handleSaveBook = async (updatedBook: IBook) => {
-    await updateBook(updatedBook).unwrap();
-    setBooks((prevBooks) =>
-      prevBooks.map((book) => (book.id === updatedBook.id ? updatedBook : book))
-    );
+    try {
+      const result = await updateBook(updatedBook).unwrap();
+      dispatch(
+        setBooks(books.map((book) => (book.id === result.id ? result : book)))
+      );
+    } catch (error) {}
   };
+
   return (
-    <div className="grid grid-cols-2 bg-white mt-[90px] w-[1400px] border border-black-500 rounded-xl mb-5">
+    <div className="grid grid-cols-2 bg-white mt-[90px] w-[1400px] border  rounded-xl mb-5">
       {filteredBooks.length > 0 ? (
         filteredBooks.map((book) => (
           <BookItem
@@ -88,7 +95,7 @@ const BookList: FC<BookListProps> = () => {
           />
         ))
       ) : (
-        <div className="flex justify-center align-center mt-20">
+        <div className="flex justify-center items-center mt-20">
           <h1 className="text-center text-3xl text-black">No books found</h1>
         </div>
       )}
