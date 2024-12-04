@@ -8,8 +8,8 @@ import { RootState } from "@/store/store";
 
 interface BookItemProps {
   book: IBook;
-  openModal: () => void;
-  handleDelete: () => void;
+  openModal?: () => void;
+  handleDelete?: () => void;
 }
 
 const BookItem: FC<BookItemProps> = ({ book, openModal, handleDelete }) => {

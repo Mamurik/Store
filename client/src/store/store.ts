@@ -7,19 +7,21 @@ import userApi from '@/Api/UserApi';
 import UserSlice from './Slices/UserSlice';
 import GenresSlice from './Slices/GenresSlice';
 import BooksSlice from './Slices/BooksSlice';
+import ReviewsApi from '@/Api/ReviewApi';
 
 export const makeStore = () => {
     return configureStore({
         reducer: {
            [BookApi.reducerPath]:BookApi.reducer,
            [userApi.reducerPath]:userApi.reducer,
+           [ReviewsApi.reducerPath]:ReviewsApi.reducer,
             search:SearchSlice,
             user:UserSlice,
             genres:GenresSlice,
             books:BooksSlice
         },
         middleware: (getDefaultMiddleware) => {
-            return getDefaultMiddleware().concat(BookApi.middleware).concat(userApi.middleware)
+            return getDefaultMiddleware().concat(BookApi.middleware).concat(userApi.middleware).concat(ReviewsApi.middleware)
         },
     });
 };

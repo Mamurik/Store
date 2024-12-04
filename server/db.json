@@ -2,7 +2,7 @@
   "books": [
     {
       "id": "10",
-      "title": "The Picture of Dorian Gray",
+      "title": "The Picture of Doria12312n Gray",
       "author": "Oscar Wilde",
       "price": 16.77,
       "genre": "Historical",
@@ -61,7 +61,7 @@
       "price": 10.99,
       "genre": "Classic",
       "img": "book3.png",
-      "desc": "A story about the Jazz Age in the United States, focusing on the enigmatic Jay Gatsby."
+      "desc": "A story about the Jazz Age in the United States, focusing on the enigmatic Jay Gaztsby."
     }
   ],
   "users": [
@@ -77,7 +77,35 @@
       "name": "123",
       "password": "123",
       "role": "admin",
-      "cart": []
+      "cart": [
+        {
+          "id": "10",
+          "title": "The Picture of Doria12312n Gray",
+          "author": "Oscar Wilde",
+          "price": 16.77,
+          "genre": "Historical",
+          "img": "book.png",
+          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
+        },
+        {
+          "id": "10",
+          "title": "The Picture of Doria12312n Gray",
+          "author": "Oscar Wilde",
+          "price": 16.77,
+          "genre": "Historical",
+          "img": "book.png",
+          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
+        },
+        {
+          "id": "10",
+          "title": "The Picture of Doria12312n Gray",
+          "author": "Oscar Wilde",
+          "price": 16.77,
+          "genre": "Historical",
+          "img": "book.png",
+          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
+        }
+      ]
     },
     {
       "id": "1732010219879",
@@ -109,16 +137,16 @@
   ],
   "reviews": [
     {
-      "id": "1",
-      "bookId": 1,
-      "userId": 1,
+      "id": "10",
+      "bookId": "10",
+      "userId": "1",
       "rating": 5,
       "comment": "A masterpiece of American literature."
     },
     {
       "id": "2",
-      "bookId": 2,
-      "userId": 2,
+      "bookId": "12",
+      "userId": "2",
       "rating": 4,
       "comment": "A thought-provoking classic."
     }

@@ -47,9 +47,12 @@ const UserCart = () => {
   const isCartEmpty = !(user?.cart && user.cart.length > 0);
 
   return (
-    <div className="bg-orange-300 border min-h-screen">
-      <HeaderUp />
-      <div className="bg-orange-100 flex flex-col justify-center items-center py-10">
+    <div className=" bg-gray-200 border min-h-screen">
+      <div className="bg-orange-300">
+        <HeaderUp />
+      </div>
+
+      <div className="flex flex-col justify-center items-center py-10">
         <h1 className="text-center text-black text-2xl font-bold mb-5">
           Корзина пользователя: {user?.name || "Пользователь не найден"}
         </h1>
@@ -66,7 +69,7 @@ const UserCart = () => {
           ) : (
             (user.cart || []).map((cartItem, index) => (
               <div
-                className="bg-gray-200 rounded-lg shadow-lg p-4 flex flex-col items-center"
+                className="bg-orange-200 rounded-lg shadow-lg p-4 flex flex-col items-center"
                 key={index}
               >
                 <img
