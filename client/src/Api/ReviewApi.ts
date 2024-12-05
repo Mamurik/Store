@@ -12,8 +12,16 @@ const ReviewsApi = createApi({
                 localStorage.setItem('reviews', JSON.stringify(response));
                 return response;
             },
+        }),
+        addReview:builder.mutation<IReview,IReview>({
+            query:(body)=> ({
+                method:"POST",
+                url:'/reviews',
+                body
+            })
+
         })
     })
 })
-export const {useGetReviewsQuery} = ReviewsApi
+export const {useGetReviewsQuery,useAddReviewMutation} = ReviewsApi
 export default ReviewsApi

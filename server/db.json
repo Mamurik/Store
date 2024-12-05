@@ -2,7 +2,7 @@
   "books": [
     {
       "id": "10",
-      "title": "The Picture of Doria12312n Gray",
+      "title": "The Picture of Dorian Gray",
       "author": "Oscar Wilde",
       "price": 16.77,
       "genre": "Historical",
@@ -77,35 +77,7 @@
       "name": "123",
       "password": "123",
       "role": "admin",
-      "cart": [
-        {
-          "id": "10",
-          "title": "The Picture of Doria12312n Gray",
-          "author": "Oscar Wilde",
-          "price": 16.77,
-          "genre": "Historical",
-          "img": "book.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
-        },
-        {
-          "id": "10",
-          "title": "The Picture of Doria12312n Gray",
-          "author": "Oscar Wilde",
-          "price": 16.77,
-          "genre": "Historical",
-          "img": "book.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
-        },
-        {
-          "id": "10",
-          "title": "The Picture of Doria12312n Gray",
-          "author": "Oscar Wilde",
-          "price": 16.77,
-          "genre": "Historical",
-          "img": "book.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
-        }
-      ]
+      "cart": []
     },
     {
       "id": "1732010219879",
@@ -149,7 +121,8 @@
       "userId": "2",
       "rating": 4,
       "comment": "A thought-provoking classic."
-    },{
+    },
+    {
       "id": "10",
       "bookId": "10",
       "userId": "1",
@@ -162,7 +135,8 @@
       "userId": "2",
       "rating": 4,
       "comment": "A thought-provoking classic."
-    },{
+    },
+    {
       "id": "10",
       "bookId": "10",
       "userId": "1",
@@ -175,7 +149,8 @@
       "userId": "2",
       "rating": 4,
       "comment": "A thought-provoking classic."
-    },{
+    },
+    {
       "id": "10",
       "bookId": "10",
       "userId": "1",
@@ -188,6 +163,13 @@
       "userId": "2",
       "rating": 4,
       "comment": "A thought-provoking classic."
+    },
+    {
+      "id": 1733388309172,
+      "userId": "2",
+      "bookId": "13",
+      "comment": "123",
+      "rating": 3
     }
   ]
 }

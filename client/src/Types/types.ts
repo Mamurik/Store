@@ -16,12 +16,11 @@ export interface IBook {
     role: 'user' | 'admin';
     cart?:IBook[]
   }
-  
   export interface IReview {
     id: number;
-    bookId: number;
+    bookId: string;
     userId: number;
     rating: number; 
     comment: string;
-  }
+}
   

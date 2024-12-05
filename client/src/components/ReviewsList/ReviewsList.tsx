@@ -1,6 +1,6 @@
 "use client";
 import { useGetBooksQuery } from "@/Api/BookApi";
-import { useGetReviewsQuery } from "@/Api/ReviewApi";
+import { useAddReviewMutation, useGetReviewsQuery } from "@/Api/ReviewApi";
 import React, { useEffect, useState } from "react";
 import Loader from "../UI/Loader/Loader";
 import { useGetUsersQuery } from "@/Api/UserApi";
@@ -12,27 +12,47 @@ import ReviewItem from "../ReviewItem/ReviewItem";
 import MyFooter from "../MyFooter/MyFooter";
 import ReviewFilter from "../ReviewFilter/ReviewFilter";
 import { setReviews } from "@/store/Slices/ReviewSlice";
+import MyButton from "../UI/MyButton/MyButton";
+import ReviewAddModal from "../ReviewAddModal/ReviewAddModal";
+import { IReview } from "@/Types/types";
 
 const ReviewsList = () => {
   const [filter, setFilter] = useState<string>("");
-  const userAuth = useSelector((state: RootState) => state.user.user);
+  const userAuth = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
   const reviews = useSelector((state: RootState) => state.reviews.reviews);
+  const [openModal, setOpenModal] = useState<boolean>(false);
+
   const {
     data: ApiReviews,
     isLoading: isReviewsLoading,
     isError: isReviewsError,
   } = useGetReviewsQuery();
+
   const {
     data: books,
     isLoading: isBooksLoading,
     isError: isBooksError,
   } = useGetBooksQuery();
+
   const {
     data: users,
     isLoading: isUserLoading,
     isError: isUserError,
   } = useGetUsersQuery();
+
+  const [addReview] = useAddReviewMutation();
+
+  const handleAdd = async (newReview: IReview) => {
+    try {
+      // Добавляем новый отзыв
+      const res = await addReview(newReview).unwrap();
+      // Обновляем состояние отзывов после добавления
+      dispatch(setReviews([...reviews, res]));
+    } catch (error) {
+      console.error("Error adding review:", error);
+    }
+  };
 
   useEffect(() => {
     if (ApiReviews) {
@@ -43,7 +63,7 @@ const ReviewsList = () => {
   const filteredReviews = reviews.filter((review) =>
     books?.some(
       (book) =>
-        book.id === review.bookId &&
+        book.id.toString() === review.bookId &&
         book.title.toLowerCase().includes(filter.toLowerCase())
     )
   );
@@ -65,6 +85,14 @@ const ReviewsList = () => {
     return stars;
   };
 
+  const handleOpenModal = () => {
+    if (userAuth.isAuth) {
+      setOpenModal(true);
+    } else {
+      alert("Войдите в аккаунт");
+    }
+  };
+
   return (
     <div
       className="flex flex-col min-h-screen bg-gray-200"
@@ -77,10 +105,11 @@ const ReviewsList = () => {
         <HeaderUp />
       </div>
       <ReviewFilter onFilter={setFilter} />
+      <MyButton onClick={handleOpenModal}>Добавить отзыв</MyButton>
       <div className="flex-grow p-5 m-0 grid grid-cols-4">
         {filteredReviews.length > 0 ? (
           filteredReviews.map((review, i) => {
-            const book = books?.find((b) => b.id === review.bookId);
+            const book = books?.find((b) => b.id.toString() === review.bookId);
             const user = users?.find((u) => u.id === review.userId);
             return (
               <ReviewItem
@@ -89,7 +118,7 @@ const ReviewsList = () => {
                 renderStars={renderStars}
                 review={review}
                 user={user}
-                userAuth={userAuth}
+                userAuth={userAuth.user}
               />
             );
           })
@@ -97,6 +126,14 @@ const ReviewsList = () => {
           <div className="col-span-4 text-center mt-10">
             <p className="text-lg text-white">No matching books found.</p>
           </div>
+        )}
+        {openModal && (
+          <ReviewAddModal
+            onAdd={handleAdd}
+            books={books}
+            user={userAuth.user}
+            onClose={() => setOpenModal(false)}
+          />
         )}
       </div>
       <MyFooter />
