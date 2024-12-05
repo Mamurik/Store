@@ -8,6 +8,7 @@ import UserSlice from './Slices/UserSlice';
 import GenresSlice from './Slices/GenresSlice';
 import BooksSlice from './Slices/BooksSlice';
 import ReviewsApi from '@/Api/ReviewApi';
+import ReviewSlice from './Slices/ReviewSlice';
 
 export const makeStore = () => {
     return configureStore({
@@ -16,6 +17,7 @@ export const makeStore = () => {
            [userApi.reducerPath]:userApi.reducer,
            [ReviewsApi.reducerPath]:ReviewsApi.reducer,
             search:SearchSlice,
+            reviews:ReviewSlice,
             user:UserSlice,
             genres:GenresSlice,
             books:BooksSlice

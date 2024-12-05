@@ -1,18 +1,25 @@
 "use client";
 import { useGetBooksQuery } from "@/Api/BookApi";
 import { useGetReviewsQuery } from "@/Api/ReviewApi";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Loader from "../UI/Loader/Loader";
 import { useGetUsersQuery } from "@/Api/UserApi";
 import HeaderUp from "../HeaderUp/HeaderUp";
 import { FaStar } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import ReviewItem from "../ReviewItem/ReviewItem";
+import MyFooter from "../MyFooter/MyFooter";
+import ReviewFilter from "../ReviewFilter/ReviewFilter";
+import { setReviews } from "@/store/Slices/ReviewSlice";
 
 const ReviewsList = () => {
+  const [filter, setFilter] = useState<string>("");
   const userAuth = useSelector((state: RootState) => state.user.user);
+  const dispatch = useDispatch();
+  const reviews = useSelector((state: RootState) => state.reviews.reviews);
   const {
-    data: reviews,
+    data: ApiReviews,
     isLoading: isReviewsLoading,
     isError: isReviewsError,
   } = useGetReviewsQuery();
@@ -26,6 +33,21 @@ const ReviewsList = () => {
     isLoading: isUserLoading,
     isError: isUserError,
   } = useGetUsersQuery();
+
+  useEffect(() => {
+    if (ApiReviews) {
+      dispatch(setReviews(ApiReviews));
+    }
+  }, [ApiReviews, dispatch]);
+
+  const filteredReviews = reviews.filter((review) =>
+    books?.some(
+      (book) =>
+        book.id === review.bookId &&
+        book.title.toLowerCase().includes(filter.toLowerCase())
+    )
+  );
+
   if (isReviewsLoading || isBooksLoading || isUserLoading) {
     return <Loader />;
   }
@@ -44,46 +66,40 @@ const ReviewsList = () => {
   };
 
   return (
-    <div className="bg-gray-200 ">
+    <div
+      className="flex flex-col min-h-screen bg-gray-200"
+      style={{
+        backgroundImage: 'url("ReviewFon.jpg")',
+        backgroundRepeat: "repeat",
+      }}
+    >
       <div className="bg-orange-300">
         <HeaderUp />
       </div>
-      {}
-      {reviews?.map((review) => {
-        const book = books?.find((b) => b.id === review.bookId);
-        const user = users?.find((u) => u.id === review.userId);
-        return (
-          <div
-            key={review.id}
-            className="border border-black rounded-xl p-4 border-b"
-          >
-            {book ? (
-              <div>
-                <img src={book.img} alt={book.title} className="w-32 h-48" />
-                <h1 className="text-lg font-bold">{book.author}</h1>
-                <h1 className="text-lg">{book.title}</h1>
-                <h1 className="text-lg">{book.price} $</h1>
-              </div>
-            ) : (
-              <h2>Книга не найдена</h2>
-            )}
-            <h1 className="mt-2">Отзыв: {review.comment}</h1>
-
-            {user ? (
-              <div className="mt-2">
-                {userAuth?.name === user.name ? (
-                  <h2>Ваш Коментарий</h2>
-                ) : (
-                  <h2>Коментарий пользователя: {user.name}</h2>
-                )}
-              </div>
-            ) : null}
-            <div className="flex items-center mt-2">
-              {renderStars(review.rating)}
-            </div>
+      <ReviewFilter onFilter={setFilter} />
+      <div className="flex-grow p-5 m-0 grid grid-cols-4">
+        {filteredReviews.length > 0 ? (
+          filteredReviews.map((review, i) => {
+            const book = books?.find((b) => b.id === review.bookId);
+            const user = users?.find((u) => u.id === review.userId);
+            return (
+              <ReviewItem
+                key={i}
+                book={book}
+                renderStars={renderStars}
+                review={review}
+                user={user}
+                userAuth={userAuth}
+              />
+            );
+          })
+        ) : (
+          <div className="col-span-4 text-center mt-10">
+            <p className="text-lg text-white">No matching books found.</p>
           </div>
-        );
-      })}
+        )}
+      </div>
+      <MyFooter />
     </div>
   );
 };
