@@ -8,11 +8,11 @@
 
 ### Frontend
 
-- [![Next.js](https://raw.githubusercontent.com/HighAmbition211/HighAmbition211/auxiliary/frameworks/nextjs.svg)](https://nextjs.org/) **Next.js**
-- [![Tailwind](https://raw.githubusercontent.com/HighAmbition211/HighAmbition211/auxiliary/frameworks/tailwindcss.svg)](https://tailwindcss.com/) **Tailwind**
-- [![Redux](https://img.icons8.com/color/48/000000/redux.png)](https://redux.js.org/) **Redux (RTK)**
-- [![RTK Query](https://img.icons8.com/color/48/000000/redux.png)](https://redux-toolkit.js.org/rtk-query/overview) **RTK Query**
-- [![Webpack](https://img.icons8.com/color/48/000000/webpack.png)](https://webpack.js.org/) **Сборщик WebPack**
+<a href="https://nextjs.org/" target="_blank"><img align="left" alt="Next.js" width="50px" style="padding:10px;" src="https://raw.githubusercontent.com/HighAmbition211/HighAmbition211/auxiliary/frameworks/nextjs.svg" /></a>
+<a href="https://tailwindcss.com/" target="_blank"><img align="left" alt="Tailwind CSS" width="50px" style="padding:10px;" src="https://raw.githubusercontent.com/HighAmbition211/HighAmbition211/auxiliary/frameworks/tailwindcss.svg" /></a>
+<a href="https://www.typescriptlang.org/" target="_blank"><img align="left" alt="TypeScript" width="50px" style="padding:10px;" src="https://raw.githubusercontent.com/HighAmbition211/HighAmbition211/auxiliary/languages/typescript.svg" /></a>
+<a href="https://react.dev/" target="_blank"><img align="left" alt="React" width="50px" style="padding:10px;" src="https://raw.githubusercontent.com/HighAmbition211/HighAmbition211/auxiliary/libraries/react.svg" /></a>
+<a href="https://redux.js.org/" target="_blank"><img align="left" alt="Redux" width="50px" style="padding:10px;" src="https://raw.githubusercontent.com/HighAmbition211/HighAmbition211/auxiliary/libraries/redux.svg" /></a>
 
 ### Backend
 
