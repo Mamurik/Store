@@ -24,7 +24,7 @@ const ReviewItem: FC<ReviewItemProps> = ({
           <img
             src={book.img}
             alt={book.title}
-            className="w-32 h-48 mb-2 max-w-[130px] rounded"
+            className="w-32 h-48 mb-2 w-[150px] rounded"
           />
           <h1 className="text-lg font-bold">{book.title}</h1>
           <h1 className="text-lg">{book.author}</h1>

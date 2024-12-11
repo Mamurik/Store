@@ -10,17 +10,15 @@ interface IAddModal {
 }
 
 const AddModal: FC<IAddModal> = ({ onClose, onAdd }) => {
-  const [addBook] = useAddNewBookMutation();
   const [title, setTitle] = useState<string>("");
   const [author, setAuthor] = useState<string>("");
   const [desc, setDescription] = useState<string>("");
   const [price, setPrice] = useState<number>(0);
   const [genre, setGenre] = useState<string>("");
   const [img, setImg] = useState<string>("/book.png");
-  const user = useSelector((state: RootState) => state.user.user);
 
-  const handleAdd = () => {
-    const newBook = {
+  const handleAdd = async () => {
+    const newBook: IBook = {
       id: Date.now(),
       title,
       author,
@@ -47,7 +45,7 @@ const AddModal: FC<IAddModal> = ({ onClose, onAdd }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-blue-500 mb-1">Title:</label>
+          <label className="block text-blue-500 mb-1">Image URL:</label>
           <input
             type="text"
             value={img}
@@ -65,7 +63,7 @@ const AddModal: FC<IAddModal> = ({ onClose, onAdd }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block  text-blue-500 mb-1">Description</label>
+          <label className="block text-blue-500 mb-1">Description</label>
           <textarea
             value={desc}
             onChange={(e) => setDescription(e.target.value)}
@@ -93,7 +91,7 @@ const AddModal: FC<IAddModal> = ({ onClose, onAdd }) => {
         <div className="flex justify-end">
           <button
             onClick={onClose}
-            className="bg-gray-300 text-black text-black p-2 rounded-md mr-2"
+            className="bg-gray-300 text-black p-2 rounded-md mr-2"
           >
             Cancel
           </button>
@@ -108,4 +106,5 @@ const AddModal: FC<IAddModal> = ({ onClose, onAdd }) => {
     </div>
   );
 };
+
 export default AddModal;

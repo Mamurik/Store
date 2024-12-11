@@ -80,11 +80,13 @@ const BookList: FC<BookListProps> = () => {
       dispatch(
         setBooks(books.map((book) => (book.id === result.id ? result : book)))
       );
-    } catch (error) {}
+    } catch (error) {
+      console.error("Failed to update the book: ", error);
+    }
   };
 
   return (
-    <div className="grid grid-cols-2 bg-white mt-[90px] w-[1400px] border  rounded-xl mb-5">
+    <div className="grid grid-cols-4 justify-center bg-white mt-[90px] w-[1400px] border  rounded-xl mb-5">
       {filteredBooks.length > 0 ? (
         filteredBooks.map((book) => (
           <BookItem

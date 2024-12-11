@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAddToCartMutation } from "@/Api/UserApi";
 import { setUser } from "@/store/Slices/UserSlice";
 import { RootState } from "@/store/store";
+import classes from "./BookItem.module.css";
 
 interface BookItemProps {
   book: IBook;
@@ -38,36 +39,39 @@ const BookItem: FC<BookItemProps> = ({ book, openModal, handleDelete }) => {
   };
 
   return (
-    <div className="flex justify-center mt-5 h-[300px]" key={book.id}>
-      <img className="max-w-[220px]" src={book.img} alt={book.title} />
-      <div className="mt-[26px] max-w-[200px] mb-3">
-        <p className="text-black mb-3 text-xl font-bold">{book.title}</p>
-        <p className="text-black mb-3">By {book.author}</p>
-        <p className="max-w-[600px] text-black mb-3">{book.desc}</p>
-
-        <button
-          onClick={() => handleAdd(book.id)}
-          className="text-black mb-3 bg-green-800 text-white p-3 w-35 border rounded-xl"
-        >
-          {book.price} $
-        </button>
-      </div>{" "}
-      {user?.role === "admin" && (
-        <div className="flex justify-center flex-col max-w[100px] mt-10">
-          <button
-            onClick={openModal}
-            className="text-black mb-3 border border-black p-3 rounded-lg"
-          >
-            Edit
-          </button>
-          <button
-            onClick={handleDelete}
-            className="text-black mb-3 border border-black p-3 rounded-lg"
-          >
-            Delete
-          </button>
+    <div className={classes.cardContainer} key={book.id}>
+      <div className={classes.card}>
+        <div className={classes.cardFront}>
+          <img className={classes.bookImage} src={book.img} alt={book.title} />
+          <div className={classes.bookDetails}>
+            <p className={classes.bookTitle}>{book.title}</p>
+            <p className={classes.bookAuthor}>By {book.author}</p>
+            <p className={classes.bookDescription}>{book.desc}</p>
+            <p className="text-green-500 mb-10">{book.price} $</p>
+          </div>
         </div>
-      )}
+        <div className={classes.cardBack}>
+          <div className="flex flex-col items-center">
+            <p className="text-green-500 mr-5 mb-4">{book.price} $</p>
+            <button
+              onClick={() => handleAdd(book.id)}
+              className={classes.bookPriceButton}
+            >
+              Add to Cart
+            </button>
+            {user?.role === "admin" && (
+              <div className={classes.adminActions}>
+                <button onClick={openModal} className={classes.editButton}>
+                  Edit
+                </button>
+                <button onClick={handleDelete} className={classes.deleteButton}>
+                  Delete
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

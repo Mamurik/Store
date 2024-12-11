@@ -45,9 +45,7 @@ const ReviewsList = () => {
 
   const handleAdd = async (newReview: IReview) => {
     try {
-      // Добавляем новый отзыв
       const res = await addReview(newReview).unwrap();
-      // Обновляем состояние отзывов после добавления
       dispatch(setReviews([...reviews, res]));
     } catch (error) {
       console.error("Error adding review:", error);

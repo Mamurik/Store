@@ -1,0 +1,109 @@
+.cardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    perspective: 1000px; 
+  }
+  
+  .card {
+    width: 280px; 
+    height: 400px; 
+    position: relative; 
+    transition: transform 0.6s; 
+    transform-style: preserve-3d; 
+    cursor: pointer; 
+  }
+  
+  .card:hover {
+    transform: rotateY(180deg); 
+  }
+  
+  .cardFront,
+  .cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    border-radius: 20px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cardFront {
+    background-color: white; 
+    flex-direction: column; 
+  }
+  
+  .cardBack {
+    background-color: #f0f0f0; 
+    transform: rotateY(180deg); 
+    display: flex; 
+  }
+  
+  .bookImage {
+    max-width: 250px; 
+  }
+  
+  .bookDetails {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    flex-direction: column;
+    text-align: center;
+    max-width: 280px; /* Max width for details */
+  }
+  
+  .bookTitle {
+    font-weight: 600;
+    font-size: 18px; /* Title font size */
+  }
+  
+  .bookAuthor {
+    font-weight: 500;
+    font-size: 16px; /* Author font size */
+  }
+  
+  .bookDescription {
+    max-width: 100%; /* Max width for description */
+    overflow: hidden;  
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    font-size: 0.9rem; 
+    color: #999;
+    margin-bottom: 16px;
+  }
+  
+  .bookPriceButton {
+    padding: 10px 15px; 
+    background-color: #4caf50; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+  }
+  
+  .bookPriceButton:hover {
+    background-color: #45a049; 
+  }
+  
+  .adminActions {
+    margin-top: 10px; 
+  }
+  
+  .editButton,
+  .deleteButton {
+    padding: 8px 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    background-color: #f0f0f0; 
+  }
+  
+  .editButton:hover {
+    background-color: #e0e0e0; 
+  }
+  
+  .deleteButton:hover {
+    background-color: #ffcccc; 
+  }

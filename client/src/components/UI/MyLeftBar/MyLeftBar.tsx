@@ -1,4 +1,3 @@
-"use client";
 import { useAddNewBookMutation, useGetBooksQuery } from "@/Api/BookApi";
 import AddModal from "@/components/AdminModal/AddModal";
 import { setBooks } from "@/store/Slices/BooksSlice";
@@ -34,12 +33,12 @@ const MyLeftBar = () => {
   const handleAddBook = async (newBook: IBook) => {
     try {
       const result = await addBook(newBook).unwrap();
-      const updatedBooks = [...(bookes || []), result];
-      dispatch(setBooks(updatedBooks));
+      dispatch(setBooks([...(bookes || []), result]));
     } catch (error) {
       console.error("Failed to add the book: ", error);
     }
   };
+
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error</div>;
 
