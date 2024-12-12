@@ -1,60 +1,150 @@
 {
   "books": [
-    {
-      "id": "10",
-      "title": "The Picture of Dorian Gray",
-      "author": "Oscar Wilde",
-      "price": 16.77,
-      "genre": "Historical",
-      "img": "book.png",
-      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
-    },
-    {
-      "id": "11",
-      "title": "War and Peace",
-      "author": "Leo Tolstoy",
-      "price": 14.99,
-      "genre": "Historical",
-      "img": "book.png",
-      "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
-    },
-    {
-      "id": "12",
-      "title": "Pride and Prejudice",
-      "author": "Jane Austen",
-      "price": 12.99,
-      "genre": "Classic",
-      "img": "book.png",
-      "desc": "A romantic novel that critiques the British landed gentry at the end of the 18th century."
-    },
-    {
-      "id": "13",
-      "title": "1984",
-      "author": "George Orwell",
-      "price": 15.99,
-      "genre": "Dystopian",
-      "img": "book.png",
-      "desc": "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism."
-    },
-    {
-      "id": "14",
-      "title": "1984",
-      "author": "George Orwell",
-      "price": 15.99,
-      "genre": "Dystopian",
-      "img": "book.png",
-      "desc": "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism."
-    },
-    {
-      "id": "15",
-      "title": "1984",
-      "author": "George Orwell",
-      "price": 15.99,
-      "genre": "Dystopian",
-      "img": "book.png",
-      "desc": "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism."
-    }
-  ],
+  {
+    "id": "1",
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "price": 10.99,
+    "genre": "Classic",
+    "img": "book.png",
+    "desc": "A novel about the serious issues of rape and racial inequality."
+  },
+  {
+    "id": "2",
+    "title": "1984",
+    "author": "George Orwell",
+    "price": 8.99,
+    "genre": "Dystopian",
+    "img": "book.png",
+    "desc": "A dystopian social science fiction novel and cautionary tale about totalitarianism."
+  },
+  {
+    "id": "3",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "price": 12.99,
+    "genre": "Romance",
+    "img": "book.png",
+    "desc": "A romantic novel that critiques the British landed gentry at the end of the 18th century."
+  },
+  {
+    "id": "4",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "price": 11.49,
+    "genre": "Classic",
+    "img": "book.png",
+    "desc": "A novel about the American dream and the roaring twenties."
+  },
+  {
+    "id": "5",
+    "title": "Moby Dick",
+    "author": "Herman Melville",
+    "price": 9.99,
+    "genre": "Adventure",
+    "img": "book.png",
+    "desc": "A story of a captain's obsession with a white whale."
+  },
+  {
+    "id": "6",
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "price": 14.99,
+    "genre": "Historical",
+    "img": "book.png",
+    "desc": "A novel about the French invasion of Russia and its impact on Tsarist society."
+  },
+  {
+    "id": "7",
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "price": 13.99,
+    "genre": "Philosophical",
+    "img": "book.png",
+    "desc": "A novel exploring morality and redemption."
+  },
+  {
+    "id": "8",
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "price": 9.49,
+    "genre": "Classic",
+    "img": "book.png",
+    "desc": "A story about teenage rebellion and angst."
+  },
+  {
+    "id": "9",
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "price": 8.99,
+    "genre": "Dystopian",
+    "img": "book.png",
+    "desc": "A futuristic novel about a controlled society."
+  },
+  {
+    "id": "10",
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "price": 10.99,
+    "genre": "Fantasy",
+    "img": "book.png",
+    "desc": "A prelude to The Lord of the Rings."
+  },
+  {
+    "id": "11",
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "price": 11.99,
+    "genre": "Classic",
+    "img": "book.png",
+    "desc": "A story about love, morality, and independence."
+  },
+  {
+    "id": "12",
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "price": 10.99,
+    "genre": "Philosophical",
+    "img": "book.png",
+    "desc": "A story about vanity, art, and moral corruption."
+  },
+  {
+    "id": "13",
+    "title": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "price": 14.49,
+    "genre": "Romance",
+    "img": "book.png",
+    "desc": "A novel about love, family, and social expectations."
+  },
+  {
+    "id": "14",
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "price": 9.99,
+    "genre": "Adventure",
+    "img": "book.png",
+    "desc": "A story about pursuing dreams and personal legends."
+  },
+  {
+    "id": "15",
+    "title": "Don Quixote",
+    "author": "Miguel de Cervantes",
+    "price": 15.99,
+    "genre": "Classic",
+    "img": "book.png",
+    "desc": "A tale of chivalry and imagination."
+  },
+  {
+    "id": "16",
+    "title": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "price": 12.99,
+    "genre": "Drama",
+    "img": "book.png",
+    "desc": "A story of friendship, betrayal, and redemption."
+  }
+],
   "users": [
     {
       "id": "1",
@@ -68,161 +158,10 @@
       "name": "123",
       "password": "123",
       "role": "admin",
-      "cart": [
-        {
-          "id": 1733733851141,
-          "title": "фывафыв",
-          "author": "фывфыв",
-          "desc": "фывфывф",
-          "price": 2,
-          "genre": "фывфыв",
-          "img": "/book.png"
-        },
-        {
-          "id": 1733733851141,
-          "title": "фывафыв",
-          "author": "фывфыв",
-          "desc": "фывфывф",
-          "price": 2,
-          "genre": "фывфыв",
-          "img": "/book.png"
-        },
-        {
-          "id": 1733733851141,
-          "title": "фывафыв",
-          "author": "фывфыв",
-          "desc": "фывфывф",
-          "price": 2,
-          "genre": "фывфыв",
-          "img": "/book.png"
-        },
-        {
-          "id": "10",
-          "title": "The Picture of Dorian Gray",
-          "author": "Oscar Wilde",
-          "price": 16.77,
-          "genre": "Historical",
-          "img": "book.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
-        },
-        {
-          "id": "10",
-          "title": "The Picture of Dorian Gray",
-          "author": "Oscar Wilde",
-          "price": 16.77,
-          "genre": "Historical",
-          "img": "book.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
-        },
-        {
-          "id": "10",
-          "title": "The Picture of Dorian Gray",
-          "author": "Oscar Wilde",
-          "price": 16.77,
-          "genre": "Historical",
-          "img": "book.png",
-          "desc": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint ipsam."
-        }
-      ]
-    },
-    {
-      "id": "1732010219879",
-      "name": "1233",
-      "password": "1233",
-      "role": "user",
-      "cart": []
-    },
-    {
-      "id": "1732109746328",
-      "name": "12",
-      "password": "12",
-      "role": "user"
-    },
-    {
-      "id": "1732109965237",
-      "name": "1234",
-      "password": "124",
-      "role": "user",
-      "cart": []
-    },
-    {
-      "id": "1732111036859",
-      "name": "писькин",
-      "password": "писька",
-      "role": "user",
       "cart": []
     }
   ],
   "reviews": [
-    {
-      "id": "10",
-      "bookId": "10",
-      "userId": "1",
-      "rating": 5,
-      "comment": "A masterpiece of American literature."
-    },
-    {
-      "id": "2",
-      "bookId": "12",
-      "userId": "2",
-      "rating": 4,
-      "comment": "A thought-provoking classic."
-    },
-    {
-      "id": "10",
-      "bookId": "10",
-      "userId": "1",
-      "rating": 5,
-      "comment": "A masterpiece of American literature."
-    },
-    {
-      "id": "2",
-      "bookId": "12",
-      "userId": "2",
-      "rating": 4,
-      "comment": "A thought-provoking classic."
-    },
-    {
-      "id": "10",
-      "bookId": "10",
-      "userId": "1",
-      "rating": 5,
-      "comment": "A masterpiece of American literature."
-    },
-    {
-      "id": "2",
-      "bookId": "12",
-      "userId": "2",
-      "rating": 4,
-      "comment": "A thought-provoking classic."
-    },
-    {
-      "id": "10",
-      "bookId": "10",
-      "userId": "1",
-      "rating": 5,
-      "comment": "A masterpiece of American literature."
-    },
-    {
-      "id": "2",
-      "bookId": "12",
-      "userId": "2",
-      "rating": 4,
-      "comment": "A thought-provoking classic."
-    },
-    {
-      "id": "1733388309172",
-      "userId": "2",
-      "bookId": "13",
-      "comment": "123",
-      "rating": 3
-    },
-    {
-      "id": 1733927692182,
-      "userId": "2",
-      "bookId": "15",
-      "comment": "Крутая книга",
-      "rating": 5
-    }
+   
   ]
 }

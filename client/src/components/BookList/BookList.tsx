@@ -1,17 +1,18 @@
 "use client";
+import React, { FC, useEffect, useState } from "react";
 import {
   useGetBooksQuery,
   useRemoveBookMutation,
   useUpdateBookMutation,
 } from "@/Api/BookApi";
-import React, { FC, useEffect, useState } from "react";
 import Loader from "../UI/Loader/Loader";
 import BookItem from "../BookItem/BookItem";
+import AdminModal from "../AdminModal/AdminModal";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { IBook } from "@/Types/types";
-import AdminModal from "../AdminModal/AdminModal";
 import { setBooks } from "@/store/Slices/BooksSlice";
+import { setCurrentPage } from "@/store/Slices/PaginationSlice";
 
 interface BookListProps {}
 
@@ -29,6 +30,13 @@ const BookList: FC<BookListProps> = () => {
   );
   const selectedGenre = useSelector(
     (state: RootState) => state.genres.selectedGenre
+  );
+
+  const currentPage = useSelector(
+    (state: RootState) => state.pagination.currentPage
+  );
+  const ITEMS_PER_PAGE = useSelector(
+    (state: RootState) => state.pagination.itemsPerPage
   );
 
   const [openModal, setOpenModal] = useState<boolean>(false);
@@ -60,6 +68,13 @@ const BookList: FC<BookListProps> = () => {
     return matchesSearch && matchesGenre;
   });
 
+  // Пагинация
+  const totalPages = Math.ceil(filteredBooks.length / ITEMS_PER_PAGE);
+  const paginatedBooks = filteredBooks.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
   const handleDelete = async (bookId: number) => {
     try {
       await removeBook(bookId).unwrap();
@@ -85,22 +100,44 @@ const BookList: FC<BookListProps> = () => {
     }
   };
 
+  const handlePageChange = (page: number) => {
+    dispatch(setCurrentPage(page));
+  };
+
   return (
-    <div className="grid grid-cols-4 justify-center bg-white mt-[90px] w-[1400px] border  rounded-xl mb-5">
-      {filteredBooks.length > 0 ? (
-        filteredBooks.map((book) => (
-          <BookItem
-            handleDelete={() => handleDelete(book.id)}
-            openModal={() => handleOpenModal(book)}
-            book={book}
-            key={book.id}
-          />
-        ))
-      ) : (
-        <div className="flex justify-center items-center mt-20">
-          <h1 className="text-center text-3xl text-black">No books found</h1>
-        </div>
-      )}
+    <div className="bg-white mt-[90px] w-[1400px] border pb-[90px] rounded-xl mb-5">
+      <div className="grid grid-cols-4 justify-center">
+        {paginatedBooks.length > 0 ? (
+          paginatedBooks.map((book) => (
+            <BookItem
+              handleDelete={() => handleDelete(book.id)}
+              openModal={() => handleOpenModal(book)}
+              book={book}
+              key={book.id}
+            />
+          ))
+        ) : (
+          <div className="flex justify-center items-center mt-20">
+            <h1 className="text-center text-3xl text-black">No books found</h1>
+          </div>
+        )}
+      </div>
+
+      {/* Пагинация */}
+      <div className="flex justify-center mt-5">
+        {[...Array(totalPages)].map((_, index) => (
+          <button
+            key={index}
+            className={`px-4 py-2 mx-1 rounded-md text-white ${
+              currentPage === index + 1 ? "bg-blue-500" : "bg-gray-400"
+            }`}
+            onClick={() => handlePageChange(index + 1)}
+          >
+            {index + 1}
+          </button>
+        ))}
+      </div>
+
       {openModal && selectedBook && (
         <AdminModal
           onSave={handleSaveBook}
